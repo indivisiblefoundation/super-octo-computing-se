@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /temp/
+Allow: /admin/public-info.html
+
+User-agent: Googlebot
+Disallow: /private-google/
+
+Sitemap: https://www.example.com/sitemap.xml

@@ -1,0 +1,27 @@
+Debugging and improving the project
+
+Focus on testing each component and fixing bugs.
+ 
+1. Web crawler bugs
+
+    Identify broken links: Check your crawler's logs for 4xx (broken page) and 5xx (server) errors, and make sure your crawler handles these gracefully.
+    Respect robots.txt: Ensure your crawler is adhering to the politeness policy by checking that it does not crawl pages disallowed by a site's robots.txt file.
+    Optimize crawl speed: If your crawler is too slow, optimize its performance by using asynchronous requests or distributed crawling. If it's too fast, you might overload the sites you are crawling and be blocked. 
+
+2. Indexer bugs
+
+    Check content quality: Ensure your index is not clogged with "thin content," such as pages with very little text, or duplicate content from different URLs. Your indexing rules should filter or de-duplicate these pages.
+    Address parsing errors: Verify that the indexer correctly extracts text and metadata from pages. Implement robust error handling for poorly formatted HTML.
+    Handle updates and deletions: Create a system to periodically re-crawl and update or remove outdated content from your index to prevent serving stale results. 
+
+3. Meta-search aggregator bugs
+
+    De-duplicate results: The most critical bug to fix is handling duplicate results from different search engine sources. Implement a de-duplication algorithm that can identify and remove redundant results to provide a cleaner user experience.
+    Test API integrations: Verify that your system correctly sends queries and parses responses from third-party search engine APIs. Timeouts and API changes are common issues that need robust error handling.
+    Refine ranking logic: Test and tune your algorithm for combining and ranking results. Some common ranking bugs involve not giving enough weight to a high-quality source or presenting irrelevant results too high up. 
+
+4. Search interface bugs
+
+    Verify functionality: The search bar should correctly submit queries, and the results page should display results clearly and load quickly. Test for broken links in your search result list.
+    Check for responsiveness: The interface should function correctly across different devices and screen sizes.
+    Optimize performance: Slow page load times can be a major bug. Use browser developer tools to diagnose performance bottlenecks. 

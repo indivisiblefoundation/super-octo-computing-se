@@ -1,0 +1,13 @@
+Framework for a meta-spider search engine
+
+The project framework for your meta-spider search engine was broken down into four core components:
+
+    Web Crawler ("Spider"): Systematically browses the web using seed URLs, a URL queue, and a politeness policy to discover and extract raw webpage data.
+    
+Indexer: Organizes the raw data into a structured format using text analysis and a search database like Elasticsearch to allow for fast and efficient searches.
+    
+Meta-Search Aggregator: Queries third-party search engines and your own index, then uses an algorithm to combine and rank the results.
+    
+Search Interface: The front-end application that handles user queries and displays the combined search results. 
+
+The plan was to start by focusing on a specific niche, choosing a technology stack, building a Minimum Viable Product (MVP), and iterating based on user feedback.

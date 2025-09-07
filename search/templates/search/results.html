@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results for "{{ query }}"</title>
+</head>
+<body>
+    <h1>Search Results for "{{ query }}"</h1>
+
+    {% if page_obj %}
+        <ul>
+        {% for result in page_obj %}
+            <li>
+                <a href="{{ result.link }}">{{ result.title }}</a>
+                <p>{{ result.snippet }}</p>
+                <p><small>Source: {{ result.source }}</small></p>
+            </li>
+        {% endfor %}
+        </ul>
+
+        <div class="pagination">
+            {% if page_obj.has_previous %}
+                <a href="?q={{ query }}&page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+            {% if page_obj.has_next %}
+                <a href="?q={{ query }}&page={{ page_obj.next_page_number }}">Next</a>
+            {% endif %}
+        </div>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+
+    <a href="{% url 'search:index' %}">Start a new search</a>
+</body>
+</html>
+

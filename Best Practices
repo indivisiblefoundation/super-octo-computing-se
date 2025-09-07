@@ -1,0 +1,7 @@
+Best practices before committing to GitHub
+
+    Use Git branches: All bug fixes and new features should be worked on in dedicated branches, not on the main branch. A standard like bugfix/issue-name is good practice.
+    Write clear commit messages: When you fix a bug, the commit message should clearly describe what was fixed and why. This helps collaborators understand the project's history.
+    Implement a .gitignore: Ensure your project's .gitignore file correctly excludes sensitive information (like API keys) and unnecessary files (such as logs, temporary files, and OS-specific files).
+    Add a README.md and LICENSE: Create a README.md that explains what the project does, how to set it up, and how to run it. Choose a license for your code, and add a LICENSE file.
+    Organize your code: Ensure your project structure is clean and logical. Your code should be well-commented to help other developers (and yourself) understand how it works. 
