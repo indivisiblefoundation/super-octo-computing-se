@@ -1,0 +1,27 @@
+{
+  "name": "super-octo-computing-se",
+  "version": "1.0.0",
+  "description": "meta-spider-searchengine qualities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indivisiblefoundations/super-octo-computing-se.git"
+  },
+  "keywords": [
+    "meta",
+    "spider",
+    "search",
+    "engine",
+    "scrap",
+    "scrape"
+  ],
+  "author": "Tomas Nelson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/indivisiblefoundations/super-octo-computing-se/issues"
+  },
+  "homepage": "https://github.com/indivisiblefoundations/super-octo-computing-se#readme"
+}

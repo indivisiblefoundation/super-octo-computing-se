@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # The core search database for indexing and retrieval.
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.14.0
+    container_name: elasticsearch
+    environment:
+      # These environment variables configure Elasticsearch to run in a single-node setup
+      # suitable for development. For production, more advanced configuration is needed.
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+
+  # The FastAPI application serving the web interface and API endpoints.
+  web-interface:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: web-interface
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - elasticsearch
+
+  # The Python service for running the Scrapy web crawler.
+  web-crawler:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: web-crawler
+    # This command can be adjusted to trigger crawls manually or on a schedule.
+    # For initial testing, you might run a single crawl command.
+    # To run a crawl: docker-compose run --rm web-crawler scrapy crawl <spider_name>
+    command: sleep infinity
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    depends_on:
+      - elasticsearch
+
+volumes:
+  elasticsearch-data:
+
+
