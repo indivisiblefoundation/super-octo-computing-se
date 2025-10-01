@@ -30,17 +30,26 @@ Follow these instructions to get the project up and running on your local machin
 
 2.  **Set up environment variables:**
     Copy the example environment file and fill in your details, such as API keys for third-party search engines.
+    create the virtual environment.
+    Execute the following command to create a new virtual environment. Replace myenv with your desired name for the environment (e.g., venv, env). 
     ```sh
-    cp .env.example .env
+    python3 -m venv myenv
     ```
+    This command creates a new directory (e.g., myenv) within your project, containing an isolated Python installation and its own pip for managing packages           specific to this environment. activate the virtual environment.
+    To start using the newly created virtual environment, activate it using the source command:
 
-3.  **Run with Docker Compose (Recommended):**
+    Code:
+    source myenv/bin/activate
+
+    Upon successful activation, your shell prompt will typically change to include the name of your virtual environment (e.g., (myenv) user@hostname:~/project$),      indicating that you are now working within the isolated environment. install packages.
+
+4.  **Run with Docker Compose (Recommended):**
     The easiest way to start all services is by using Docker Compose.
     ```sh
     docker-compose up --build
     ```
 
-4.  **Manual Installation (Alternative):**
+5.  **Manual Installation (Alternative):**
     [Provide detailed instructions for a manual setup, including virtual environments, library installation (`pip install -r requirements.txt`), and how to start each service.]
 
 ## Usage
@@ -50,4 +59,4 @@ Follow these instructions to get the project up and running on your local machin
 To start populating your index, you can use the built-in spider.
 ```sh
 # Example command
-python spider.py --seed-url "https://example.com"
+python spider.py --seed-url "https://chosenwebsite.com"
