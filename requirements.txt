@@ -16,7 +16,7 @@ elasticsearch==8.14.0
 pydantic==2.8.2
 # Meta-Search Aggregator (and general-purpose requests)
 # The requests library is a standard for making HTTP requests.
-requests==2.32.3
+requests==2.32.4
 
 # Search Interface (Backend API)
 
