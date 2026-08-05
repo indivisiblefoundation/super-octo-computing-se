@@ -31,7 +31,7 @@ uvicorn==0.30.1
 python-decouple==3.8
 # Asynchronous Operations
 # Aiohttp is a library for asynchronous HTTP requests.
-aiohttp==3.14.1
+aiohttp==3.14.3
 # Additional Packages (Optional but Recommended)
 # If you need to parse complex HTML documents manually.
 beautifulsoup4==4.12.3
